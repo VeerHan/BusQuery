@@ -2,26 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="@dimen/activity_horizontal_margin">
 
 
     <EditText
-        android:id="@+id/et_start"
-
-        android:layout_width="match_parent"
+        android:id="@+id/et_line"
+        android:layout_width="0dp"
+        android:hint="请输入站点名称"
         android:layout_height="50dp"
-        android:hint="请输入起点" />
-
-    <EditText
-        android:id="@+id/et_end"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="请输入终点" />
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/btn_search"
-        android:layout_width="match_parent"
+        android:layout_width="80dp"
         android:layout_height="50dp"
         android:text="查询" />
 

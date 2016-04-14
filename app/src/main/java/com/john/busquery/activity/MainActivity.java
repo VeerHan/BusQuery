@@ -1,4 +1,4 @@
-package com.john.busquery.ui.activity;
+package com.john.busquery.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
