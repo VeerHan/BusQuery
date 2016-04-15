@@ -62,8 +62,8 @@ public class LineFragment extends Fragment {
         getData(Constant.app_key, Constant.city_id, lineName);
     }
 
-    private void getData(final String appKey, final String cityId, final String lineName) {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, API.Line, new Response.Listener<String>() {
+    private void getData(final String appKey, final String cityId, final String line) {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, API.LINE, new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
                 try {
@@ -100,7 +100,7 @@ public class LineFragment extends Fragment {
                 Map<String, String> map = new HashMap<>();
                 map.put("appkey", appKey);
                 map.put("cityid", cityId);
-                map.put("transitno", lineName);
+                map.put("transitno", line);
                 return map;
             }
         };

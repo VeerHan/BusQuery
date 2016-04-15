@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentList.add(new StationFragment());
         adapter = new MyFragmentPagerAdapter(getSupportFragmentManager(), titles, fragmentList);
         viewPager.setAdapter(adapter);
+        viewPager.setOffscreenPageLimit(3);
         tabLayout.setupWithViewPager(viewPager);
     }
 
