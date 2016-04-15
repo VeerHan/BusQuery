@@ -81,7 +81,7 @@ public class LineFragment extends Fragment {
                         listView.setAdapter(new SimpleAdapter(getActivity(), data, android.R.layout.simple_list_item_1, new String[]{"station"}, new int[]{android.R.id.text1}));
 
                     } else {
-                        Toast.makeText(getActivity(), "没有信息", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), R.string.no_info, Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (JSONException e) {
@@ -92,7 +92,7 @@ public class LineFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                Toast.makeText(getActivity(), "网络连接已断开，请稍后重试", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.error_net, Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override

@@ -1,6 +1,5 @@
 package com.john.busquery.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -82,7 +81,7 @@ public class LineDetailActivity extends AppCompatActivity {
                         listView.setAdapter(new SimpleAdapter(LineDetailActivity.this, data, android.R.layout.simple_list_item_1, new String[]{"station"}, new int[]{android.R.id.text1}));
 
                     } else {
-                        Toast.makeText(LineDetailActivity.this, "没有信息", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LineDetailActivity.this, R.string.no_info, Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (JSONException e) {
@@ -93,7 +92,7 @@ public class LineDetailActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                Toast.makeText(LineDetailActivity.this, "网络连接已断开，请稍后重试", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LineDetailActivity.this, R.string.error_net, Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
