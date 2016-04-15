@@ -5,7 +5,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.john.busquery.R;
 import com.john.busquery.adapter.MyFragmentPagerAdapter;
@@ -25,9 +24,8 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     @InjectView(R.id.tabLayout)
     TabLayout tabLayout;
-    //页卡视图标题
+
     private String[] titles = {"线路", "换乘", "站点"};
-    //页卡视图集合
     private List<Fragment> fragmentList = new ArrayList<>();
     private MyFragmentPagerAdapter adapter;
 
