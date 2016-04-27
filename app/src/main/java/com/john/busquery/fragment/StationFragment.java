@@ -2,6 +2,7 @@ package com.john.busquery.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,6 +56,12 @@ public class StationFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_station, null);
         ButterKnife.inject(this, view);
         queue = Volley.newRequestQueue(getActivity());
+        return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -65,18 +72,17 @@ public class StationFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        return view;
     }
 
     @OnClick(R.id.btn_search)
     public void onClick() {
         data.clear();
         String stationName = etStation.getText().toString().trim();
-        getData(Constant.app_key, Constant.city_id, stationName);
+        getData(stationName);
     }
 
 
-    private void getData(final String appKey, final String cityId, final String station) {
+    private void getData(final String station) {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, API.STATION, new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
@@ -111,8 +117,8 @@ public class StationFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<>();
-                map.put("appkey", appKey);
-                map.put("cityid", cityId);
+                map.put("appkey", Constant.app_key);
+                map.put("cityid", Constant.city_id);
                 map.put("station", station);
                 return map;
             }

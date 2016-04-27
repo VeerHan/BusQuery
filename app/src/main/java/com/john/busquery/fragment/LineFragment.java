@@ -59,10 +59,10 @@ public class LineFragment extends Fragment {
     public void onClick() {
         data.clear();
         String lineName = etLine.getText().toString().trim();
-        getData(Constant.app_key, Constant.city_id, lineName);
+        getData(lineName);
     }
 
-    private void getData(final String appKey, final String cityId, final String line) {
+    private void getData(final String line) {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, API.LINE, new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
@@ -98,8 +98,8 @@ public class LineFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<>();
-                map.put("appkey", appKey);
-                map.put("cityid", cityId);
+                map.put("appkey", Constant.app_key);
+                map.put("cityid", Constant.city_id);
                 map.put("transitno", line);
                 return map;
             }
