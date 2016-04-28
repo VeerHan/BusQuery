@@ -46,7 +46,6 @@ public class SwitchAdapter extends ListBaseAdapter {
 
     private void bindData(ViewHolder vh, int position) {
         Map<String, String> map = (Map<String, String>) data.get(position);
-        vh.textView.setText("haahha");
         vh.textView.setText(Html.fromHtml(map.get("text")));
     }
 
