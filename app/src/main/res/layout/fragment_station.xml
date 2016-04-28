@@ -16,7 +16,8 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:hint="请输入站点名称" />
+            android:hint="请输入站点名称"
+            android:inputType="text" />
 
         <Button
             android:id="@+id/btn_search"

@@ -8,16 +8,17 @@
 
     <EditText
         android:id="@+id/et_start"
-
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="请输入起点" />
+        android:hint="请输入起点"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/et_end"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="请输入终点" />
+        android:hint="请输入终点"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/btn_search"
